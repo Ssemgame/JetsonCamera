@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JetsonCamera || Streamuji...</title>
+</head>
+<body>
+    <img src="{{ url_for('video_feed') }}">
+    <input type="button" id="script" name="scriptbutton" value="Vypnout" onclick="turnOff()">
+    <input type="button" value="Restartovat" onclick="rebootDevice()">
+    <link rel="stylesheet" href="py-script.css">
+    <script src="py-script.js"></script>
+    <py-script>
+        import os
+        def kill():
+            exit()
+        def turnOff():
+            os.system("sudo shutdown")
+        def rebootDevice():
+            os.system("sudo reboot")
+    </py-script>
+</body>
+</html>
